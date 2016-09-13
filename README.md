@@ -1,1 +1,0 @@
-# react-redux-meteor-boilerplate
