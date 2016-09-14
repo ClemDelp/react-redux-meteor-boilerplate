@@ -1,17 +1,34 @@
 // IMPORT
+import 'babel-polyfill'
 import React from 'react'
 import { render } from 'react-dom'
-import { createStore } from 'redux'
+import { applyMiddleware, compose, createStore } from 'redux'
 import { Meteor } from 'meteor/meteor'
 import rootReducer from './reducers'
 import Root from './containers/Root'
 import ReactDOM from 'react-dom'
 import {sayHello} from './reducers/data'
 
-// CREATE REDUX SOTRE
+//
+// SAGA
+//
+import rootSaga from './sagas'
+import createSagaMiddleware from 'redux-saga'
+const sagaMiddleware = createSagaMiddleware()
+
+//
+// STORE
+//
 const store = createStore(
-  rootReducer, {}, window.devToolsExtension ? window.devToolsExtension() : undefined
+  rootReducer,
+  compose(
+    applyMiddleware(sagaMiddleware),
+    window.devToolsExtension
+    ? window.devToolsExtension()
+    : f => f
+  )
 )
+sagaMiddleware.run(rootSaga)
 
 // APP
 
