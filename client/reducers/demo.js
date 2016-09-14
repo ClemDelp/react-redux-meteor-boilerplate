@@ -3,25 +3,26 @@
 //
 
 export const SAY_HELLO = 'SAY_HELLO'
+export const ADD_SCORE = 'ADD_SCORE'
 
 //
 // INITIAL STATE
 //
 
 const intialState = {
-  hellos: []
+  score: []
 }
 
 //
 // REDUCER
 //
 
-export default function data (state = intialState, action) {
+export default function demo (state = intialState, action) {
   switch (action.type) {
 
-    case SAY_HELLO:
+    case ADD_SCORE:
       return Object.assign({}, state, {
-        hellos: [...state.hellos, action.hello]
+        score: [...state.score, action.score]
       })
 
     default:
@@ -33,9 +34,9 @@ export default function data (state = intialState, action) {
 // EXPORT
 //
 
-export function sayHello (hello) {
+export function addScore (score) {
   return {
-    type: SAY_HELLO,
-    hello
+    type: ADD_SCORE,
+    score
   }
 }

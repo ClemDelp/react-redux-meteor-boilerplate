@@ -1,13 +1,12 @@
 // IMPORT
 import 'babel-polyfill'
 import React from 'react'
-import { render } from 'react-dom'
 import { applyMiddleware, compose, createStore } from 'redux'
 import { Meteor } from 'meteor/meteor'
 import rootReducer from './reducers'
 import Root from './containers/Root'
 import ReactDOM from 'react-dom'
-import {sayHello} from './reducers/data'
+import {addScore} from './reducers/demo'
 
 //
 // SAGA
@@ -19,6 +18,7 @@ const sagaMiddleware = createSagaMiddleware()
 //
 // STORE
 //
+
 const store = createStore(
   rootReducer,
   compose(
@@ -30,14 +30,11 @@ const store = createStore(
 )
 sagaMiddleware.run(rootSaga)
 
+//
 // APP
+//
 
 Meteor.startup(() => {
-  // STREAMS
-  Streamy.on('hello', function (json) {
-    store.dispatch(sayHello(json.data))
-  })
-
   // mount app
 	const reactDivElement = document.getElementById('render-target')
 	if (reactDivElement) {
@@ -45,6 +42,16 @@ Meteor.startup(() => {
 	}
 })
 
+//
+// STREAMS
+//
+
+Streamy.on('scoreStream', function (score) {
+  store.dispatch(addScore(score))
+})
+
+//
+// DEBUGS
 // Since we don't want all those debug messages
 Meteor._debug = (function (super_meteor_debug) {
   return function (error, info) {

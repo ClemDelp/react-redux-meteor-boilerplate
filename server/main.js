@@ -25,11 +25,14 @@ if(Meteor.isServer) {
 		}).run()
 
 		// ROUTE
-		app.get('/hello', function (req, res) {
+		app.get('/getScoreInRealTime', function (req, res) {
+			console.log('/getScoreInRealTime')
 			// Test sream
-			console.log('route /hello was called...')
-			Streamy.broadcast('hello', {data: new Date().toLocaleTimeString() + ' - Hello from stream...'})
-			res.json({data: 'response from /hello...'})
+			setInterval(function () {
+				const y = Math.floor(Math.random() * 10)
+				Streamy.broadcast('scoreStream', {'y': y, 'date': new Date().toLocaleTimeString()})
+			}, 3000)
+			res.json({data: 'response from /getScoreInRealTime...'})
 		})
 	})
 }
