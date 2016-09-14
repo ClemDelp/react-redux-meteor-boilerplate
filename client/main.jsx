@@ -3,11 +3,10 @@ import React from 'react'
 import { render } from 'react-dom'
 import { createStore } from 'redux'
 import { Meteor } from 'meteor/meteor'
-import {rootReducer} from './reducers'
-// import {sayHello} from './reducers/data'
+import rootReducer from './reducers'
 import Root from './containers/Root'
 import ReactDOM from 'react-dom'
-import {apiRequest} from './utils/api'
+import {sayHello} from './reducers/data'
 
 // CREATE REDUX SOTRE
 const store = createStore(
@@ -15,13 +14,24 @@ const store = createStore(
 )
 
 // APP
+
 Meteor.startup(() => {
-  apiRequest('/hello')
-  Streamy.on('hello', (hello) => {
-    // sayHello(hello.hello)
+  // STREAMS
+  Streamy.on('hello', function (json) {
+    store.dispatch(sayHello(json.data))
   })
+
+  // mount app
 	const reactDivElement = document.getElementById('render-target')
 	if (reactDivElement) {
 		ReactDOM.render(<Root store={store} />, reactDivElement)
 	}
 })
+
+// Since we don't want all those debug messages
+Meteor._debug = (function (super_meteor_debug) {
+  return function (error, info) {
+    if (!(info && _.has(info, 'msg')))
+      super_meteor_debug(error, info)
+  }
+})(Meteor._debug);

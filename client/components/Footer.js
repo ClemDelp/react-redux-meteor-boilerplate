@@ -8,7 +8,7 @@ import React from 'react'
 //
 let Footer = () => {
   return (
-   	<b>footer</b>
+   	<b>FOOTER</b>
   )
 }
 

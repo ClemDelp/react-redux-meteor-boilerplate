@@ -11,6 +11,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
+import {apiRequest} from '../utils/api'
+
 //
 // COMPONENT
 //
@@ -36,11 +38,15 @@ const Index = () => {
           </div>
         </div>
         <div className='row'>
-          <div style={styles.body} className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+          <div style={styles.body} className='col-xs-6 col-sm-6 col-md-6 col-lg-6'>
             <h1>BODY</h1>
           </div>
-          <div style={styles.body} className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+          <div style={styles.body} className='col-xs-6 col-sm-6 col-md-6 col-lg-6'>
             <p>Hello Stream</p>
+            <button onClick={() => {
+              // test api route and stream connection
+              apiRequest('/hello')
+            }}>Test the stream</button>
             <HelloStream />
           </div>
         </div>
@@ -55,7 +61,14 @@ const Index = () => {
 }
 
 //
-// EXPORT
+// CONNECT
 //
 
-export default connect()(Index)
+function mapStateToProps ({data: {hellos}}) {
+  return {hellos}
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(Index)

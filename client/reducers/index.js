@@ -3,14 +3,14 @@
 //
 
 import { combineReducers } from 'redux'
-// import data from './data'
+import data from './data'
 
 //
 // COMBINE
 //
 
 const rootReducer = combineReducers({
-  // data
+  data
 })
 
 //

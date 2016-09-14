@@ -20,19 +20,16 @@ if(Meteor.isServer) {
 			Log.insert({
 				datetime: new Date()
 			}, function (error, response) {
-				console.log(response)
-				console.log('new log in db, total logs ---> ', Log.find().count())
+				console.log('new log (id: ' + response + ') in db, total logs ---> ', Log.find().count())
 			})
 		}).run()
 
 		// ROUTE
 		app.get('/hello', function (req, res) {
 			// Test sream
-			console.log('route hello was called...')
-			setInterval(function () {
-				console.log('stream hello on hello stream...')
-				Streamy.broadcast('hello', {hello: 'hello'})
-			}, 3000)
+			console.log('route /hello was called...')
+			Streamy.broadcast('hello', {data: new Date().toLocaleTimeString() + ' - Hello from stream...'})
+			res.json({data: 'response from /hello...'})
 		})
 	})
 }

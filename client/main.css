@@ -5,3 +5,12 @@ body {
   font-weight: 500;
   font-size: 0.8em;
 }
+
+li {
+	cursor: pointer;
+}
+
+li:hover{
+	background: gray;
+	color: white;
+}

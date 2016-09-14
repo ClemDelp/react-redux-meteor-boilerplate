@@ -24,8 +24,9 @@ const HelloStream = ({hellos}) => {
 //
 // CONNECT
 //
-function mapStateToProps ({appReducer: {hellos}}) {
-  console.log(hellos)
+
+function mapStateToProps ({data: {hellos}}) {
   return {hellos}
 }
+
 export default connect(mapStateToProps, null)(HelloStream)
