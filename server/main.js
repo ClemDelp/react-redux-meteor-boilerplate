@@ -1,8 +1,6 @@
 import { Meteor } from 'meteor/meteor'
 import bodyParser from 'body-parser'
 import { Log } from '../imports/api/Log.js'
-import express from 'express'
-console.log('express', express)
 const Fiber = require('fibers')
 
 if(Meteor.isServer) {

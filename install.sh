@@ -18,5 +18,3 @@ cp -R $TEMP_DIR/project/.meteor $CURRENT_DIR
 
 cd ../../
 rm -rf .meteorify
-
-mrt add meteor-express
