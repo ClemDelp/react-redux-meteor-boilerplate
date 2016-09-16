@@ -14,11 +14,9 @@ Depending on how you want to use the boilerplate:
 * or git clone
 * or Download ZIP
 
-
 ### Install the dependencies
 ```
 cd project-folder
-sh install.sh
 meteor npm install
 ```
 

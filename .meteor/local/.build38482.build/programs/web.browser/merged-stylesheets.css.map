@@ -1,0 +1,1 @@
+{"version":3,"sources":["meteor://💻app/app/client/main.css"],"names":[],"mappings":"AAAA;;AACA;EACE;EACA;EACA;EACA","sourcesContent":["/* CSS declarations go here */\nbody {\n  margin: 0;\n  font-family: 'Roboto', sans-serif;\n  font-weight: 500;\n  font-size: 0.8em;\n}\n"]}
