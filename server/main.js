@@ -31,7 +31,7 @@ if(Meteor.isServer) {
 			setInterval(function () {
 				const y = Math.floor(Math.random() * 10)
 				Streamy.broadcast('scoreStream', {'y': y, 'date': new Date().toLocaleTimeString()})
-			}, 3000)
+			}, 1000)
 			res.json({data: 'response from /getScoreInRealTime...'})
 		})
 	})

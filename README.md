@@ -1,6 +1,8 @@
 # Meteor react-redux ready to use
 For rapid prototyping with a complete react-redux environment
 
+![alt tag](readmeFiles/demo.gif)
+
 ## WHAT INSIDE
 Tech:
 * backend: Meteor + Express

@@ -3,21 +3,33 @@
 //
 import React from 'react'
 import { connect } from 'react-redux'
+import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table'
 
 //
 // COMPONENT
 //
-const ScoreStream = ({score}) => {
+const ScoreStream = ({_score}) => {
   return (
-    <ul>
+    <Table>
+      <TableHeader displaySelectAll={false}>
+        <TableRow>
+          <TableHeaderColumn>Score</TableHeaderColumn>
+          <TableHeaderColumn>Time</TableHeaderColumn>
+        </TableRow>
+      </TableHeader>
+      <TableBody displayRowCheckbox={false}>
       {
-        score.map((score, index) => {
+        _score.map((s, index) => {
           return (
-            <li key={index}>{score.y} - {score.date}</li>
+            <TableRow key={index}>
+              <TableRowColumn><strong>{s.y}</strong></TableRowColumn>
+              <TableRowColumn>{s.date}</TableRowColumn>
+            </TableRow>
           )
         })
       }
-    </ul>
+      </TableBody>
+    </Table>
   )
 }
 
@@ -26,7 +38,8 @@ const ScoreStream = ({score}) => {
 //
 
 function mapStateToProps ({demo: {score}}) {
-  return {score}
+  const _score = score.reverse()
+  return {_score}
 }
 
 export default connect(mapStateToProps, null)(ScoreStream)

@@ -12,7 +12,7 @@ import AppBar from 'material-ui/AppBar'
 let Header = () => {
   return (
   	<AppBar
-      title='Meteor react-redux boilerplate'
+      title='Boilerplate - DEMO'
       iconClassNameRight='muidocs-icon-navigation-expand-more'
     />
 	)
