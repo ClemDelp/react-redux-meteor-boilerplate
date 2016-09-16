@@ -18,7 +18,6 @@ Depending on how you want to use the boilerplate:
 ### Install the dependencies
 ```
 cd project-folder
-sh install.sh
 meteor npm install
 ```
 
