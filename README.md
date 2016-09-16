@@ -1,32 +1,24 @@
 # Meteor react-redux ready to use
 For rapid prototyping with a complete react-redux environment
 
-## what inside
+## WHAT INSIDE
 Tech:
-* backend: meteor + express + streamy
-* frontend: react + redux + sagas
-* templating: material-ui + flexibox
+* backend: Meteor + Express
+* frontend: React + Redux
+* templating: Material-ui + Flexibox
 
-Demo:
-* rest-api demo with express
-* web socket with streamy
-* pure react component
-* sagas interaction
-* database interaction
-* ...
-
-to remove the demo file:
-* 
-*
-
-## How to use it
+## HOW TO USE IT
 ### Get the boilerplate
-* fork the project
-* git clone
+Depending on how you want to use the boilerplate:
+* fork
+* or git clone
+* or Download ZIP
+
 
 ### Install the dependencies
 ```
 cd project-folder
+sh install.sh
 meteor npm install
 ```
 
@@ -53,6 +45,21 @@ With [Robomongo](https://robomongo.org/) create a new connection
 then
 
 ![alt tag](readmeFiles/collections.png)
+
+### DEMO
+
+* rest-api demo with express
+* web socket with streamy
+* pure react component
+* sagas interaction
+* database interaction
+* ...
+
+To remove the demo file from the frontend:
+```
+cd your-project
+rm -rf client/demo
+```
 
 ## THEN
 
