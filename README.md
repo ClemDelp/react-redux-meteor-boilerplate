@@ -17,13 +17,16 @@ Depending on how you want to use the boilerplate:
 * or Download ZIP
 
 
-### Install the dependencies
+### Install
 ```
 cd project-folder
-meteor npm install
+sh install.sh
 ```
 
 ### Launch the server
+
+by default install.sh will lunch the server, in other case simply type:
+
 ```
 meteor
 ```
