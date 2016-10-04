@@ -23,4 +23,6 @@ meteor npm install
 
 meteor add glittershark:meteor-express
 
+meteor add yuukan:streamy
+
 meteor
