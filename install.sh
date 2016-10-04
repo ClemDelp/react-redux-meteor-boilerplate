@@ -18,3 +18,9 @@ cp -R $TEMP_DIR/project/.meteor $CURRENT_DIR
 
 cd ../../
 rm -rf .meteorify
+
+meteor npm install
+
+meteor add glittershark:meteor-express
+
+meteor
