@@ -16,6 +16,9 @@ Depending on how you want to use the boilerplate:
 * or git clone
 * or Download ZIP
 
+### Dependency
+
+This boilerplate need meteor installed on your device: [Install meteor](https://www.meteor.com/install)
 
 ### Install
 ```
