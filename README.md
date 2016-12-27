@@ -29,7 +29,7 @@ This boilerplate need meteor installed on your device: [Install meteor](https://
 cd project-folder
 ```
 
-If you don't want install the demo files please remove the fodler "demo" before:
+If you don't want install the demo files please remove the "demo" folder before:
 
 ```
 rm -rf demo
@@ -51,7 +51,7 @@ sh install.sh
 * database interaction
 * ...
 
-To remove all the demo files:
+Reminder, to remove all the demo files:
 
 ```
 cd project-folder
