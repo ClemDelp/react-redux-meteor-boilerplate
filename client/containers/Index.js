@@ -10,9 +10,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
-// To remove
-import Demo from '../demo/'
-
 //
 // COMPONENT
 //
@@ -40,7 +37,7 @@ const Index = () => {
         </div>
         <div className='row'>
           <div style={styles.body} className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-            <Demo />
+            Redux react meteor boilerplate
           </div>
         </div>
         <div className='row'>
@@ -57,8 +54,8 @@ const Index = () => {
 // CONNECT
 //
 
-function mapStateToProps ({demo: {hellos}}) {
-  return {hellos}
+function mapStateToProps () {
+  return {}
 }
 
 export default connect(

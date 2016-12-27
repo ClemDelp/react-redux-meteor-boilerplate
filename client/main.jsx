@@ -6,7 +6,6 @@ import { Meteor } from 'meteor/meteor'
 import rootReducer from './reducers'
 import Root from './containers/Root'
 import ReactDOM from 'react-dom'
-import {addScore} from './reducers/demo'
 
 //
 // SAGA
@@ -40,14 +39,6 @@ Meteor.startup(() => {
 	if (reactDivElement) {
 		ReactDOM.render(<Root store={store} />, reactDivElement)
 	}
-})
-
-//
-// STREAMS
-//
-
-Streamy.on('scoreStream', function (score) {
-  store.dispatch(addScore(score))
 })
 
 //
