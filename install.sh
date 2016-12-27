@@ -1,7 +1,10 @@
 #!/bin/bash
 
+echo 'BOILERPLATE INSTALLATION'
+
 CURRENT_DIR=`pwd`
 TEMP_DIR="$CURRENT_DIR/.meteorify/temp"
+DEMO="demo"
 
 if [ -d ".meteor" ]; then
     echo "This is already a Meteor app!"
@@ -24,6 +27,12 @@ meteor npm install
 meteor add glittershark:meteor-express
 
 meteor add yuukan:streamy
+
+if [ -d "$DEMO" ]; then
+  cd $DEMO
+  sh install.sh
+  exit 1
+fi
 
 open http://localhost:3000/
 
