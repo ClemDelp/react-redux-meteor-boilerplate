@@ -25,6 +25,21 @@ This boilerplate need meteor installed on your device: [Install meteor](https://
 cd project-folder
 sh install.sh
 ```
+### DEMO
+[Sub folder here](https://github.com/ClemDelp/react-redux-meteor-boilerplate/tree/master/demo)
+* rest-api demo with express
+* web socket with streamy
+* pure react component
+* sagas interaction
+* database interaction
+* ...
+
+To remove all the demo files:
+```
+cd your-project
+rm -rf demo
+```
+Then restart the server
 
 ### Launch the server
 
@@ -52,21 +67,6 @@ With [Robomongo](https://robomongo.org/) create a new connection
 then
 
 ![alt tag](readmeFiles/collections.png)
-
-### DEMO
-
-* rest-api demo with express
-* web socket with streamy
-* pure react component
-* sagas interaction
-* database interaction
-* ...
-
-To remove the demo file from the frontend:
-```
-cd your-project
-rm -rf client/demo
-```
 
 ## THEN
 
