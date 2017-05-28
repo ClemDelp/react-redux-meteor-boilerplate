@@ -41,6 +41,17 @@ Then/or
 sh install.sh
 ```
 
+### DEPLOY ON HEROKU
+To deploy your app on heroku:
+- first you need an heroku account
+- you need heroku CLI install on your device
+- heroku will ask you to enter a credit card to install mongolab addon (don't worry it's free plan so they wont charge you)
+- only after, in your app folder:
+
+```
+sh heroku_init.sh
+```
+
 ### DEMO
 
 [Sub folder here](https://github.com/ClemDelp/react-redux-meteor-boilerplate/tree/master/demo)
