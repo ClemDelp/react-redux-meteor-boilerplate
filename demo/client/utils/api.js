@@ -1,7 +1,7 @@
 // polyfills fetch on window object, if necessary
 require('whatwg-fetch')
 
-export function apiRequest (endpoint, requestConfig = {}, cb) {
+export function apiRequest (endpoint, requestConfig = {}) {
   // NOTE: assumes all calls are JSON in this API
   requestConfig.headers = {
     'Accept': 'application/json',
@@ -13,8 +13,5 @@ export function apiRequest (endpoint, requestConfig = {}, cb) {
   }
   return window.fetch(endpoint, requestConfig)
   .then(res => res.json())
-  .then(json => {
-    if (cb) cb(json)
-    return json || {}
-  })
+  .then(json => json || {})
 }
