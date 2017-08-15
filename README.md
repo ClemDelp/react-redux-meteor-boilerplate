@@ -41,16 +41,42 @@ Then/or
 sh install.sh
 ```
 
+Then remove .meteor from gitignore
+
+### Launch the server
+
+By default install.sh will lunch the server, in other case simply type:
+
+```
+meteor
+```
+
+Then in browser:
+
+```
+http://localhost:3000
+```
+
 ### DEPLOY ON HEROKU
 To deploy your app on heroku:
 - first you need an heroku account
 - you need heroku CLI install on your device
 - heroku will ask you to enter a credit card to install mongolab addon (don't worry it's free plan so they wont charge you)
-- only after, in your app folder:
+git push heroku master
+- remove .meteor from gitignore
+- if you don't have a .git:
+```
+git init
+git add .
+git commit -m 'first commit'
+```
 
+- only after:
 ```
 sh heroku_init.sh
 ```
+
+git push heroku master
 
 ### DEMO
 
@@ -71,20 +97,6 @@ rm -rf demo
 
 Then restart the server
 
-### Launch the server
-
-By default install.sh will lunch the server, in other case simply type:
-
-```
-meteor
-```
-
-Then in browser:
-
-```
-http://localhost:3000
-```
-
 ### Launch the database
 
 Meteor use Mongo as DB
@@ -103,6 +115,18 @@ With [Robomongo](https://robomongo.org/) create a new connection
 then
 
 ![alt tag](readmeFiles/collections.png)
+
+## Special directories
+
+ref: https://guide.meteor.com/structure.html
+
+### imports
+
+Any directory named imports/ is not loaded anywhere and files must be imported using import (import '../import/your_file.name')
+
+### public
+
+All files inside a top-level directory called public/ are served as-is to the client. When referencing these assets, do not include public/ in the URL, write the URL as if they were all in the top level. For example, reference public/bg.png as <img src='/bg.png' />. This is the best place for favicon.ico, robots.txt, and similar files.
 
 ## THEN
 
